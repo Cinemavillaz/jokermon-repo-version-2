@@ -62,7 +62,7 @@ async def auto_filter(bot, update):
     if filters:
         results.append(
                 [
-                    InlineKeyboardButton("📌 JOIN OUR MAIN CHANNEL ", url="https://t.me/cv_updatez")
+                    InlineKeyboardButton("📌 JOIN OUR MAIN CHANNEL ", url="https://t.me/Zee_Keralam")
                 ]
             )
         for filter in filters: # iterating through each files
@@ -76,19 +76,17 @@ async def auto_filter(bot, update):
             if file_size < 1024:
                 file_size = f"[{file_size} B]"
             elif file_size < (1024**2):
-                file_size = f"[{str(round(file_size/1024, 2))} KiB] "
+                file_size = f"[{str(round(file_size/1024, 2))} KB] "
             elif file_size < (1024**3):
-                file_size = f"[{str(round(file_size/(1024**2), 2))} MiB] "
+                file_size = f"[{str(round(file_size/(1024**2), 2))} MB] "
             elif file_size < (1024**4):
-                file_size = f"[{str(round(file_size/(1024**3), 2))} GiB] "
+                file_size = f"[{str(round(file_size/(1024**3), 2))} GB] "
             
             
             file_size = "" if file_size == ("[0 B]") else file_size
             
             # add emoji down below inside " " if you want..
-            file_names = file_name
-            f_size = file_size
-
+            button_text = f"📂 {file_size} - {file_name}"
             
 
             if file_type == "video":
@@ -127,8 +125,8 @@ async def auto_filter(bot, update):
                 file_link = f"https://t.me/{bot_.username}?start={unique_id}"
             
             results.append([
-            button_text = f"📂 {file_size} {file_name} 🗂️"
-        ])
+            InlineKeyboardButton(button_text, url=file_link)
+         ])
                 
     else:
         return # return if no files found for that query
@@ -206,10 +204,9 @@ async def auto_filter(bot, update):
         reply_markup = InlineKeyboardMarkup(result[0])
 
         try:
-           await bot.send_photo(
+           await bot.send_message(
                 chat_id=update.chat.id,
-                photo="https://telegra.ph/file/4317e694b1a2175dd9d1a.jpg",
-                                caption=f"<b>Found {(len_results)} Results For Your Query: {query} \n\nതാങ്കൾക്ക് കിട്ടിയ ഈ ഫിൽറ്റർ മെസ്സേജ് കാലാവധി വെറും 1 ദിവസം മാത്രം ❕️</b>",
+                text=f"<b>Found {(len_results)} Results For Your Query: {query} \n\nതാങ്കൾക്ക് കിട്ടിയ ഈ ഫിൽറ്റർ മെസ്സേജ് കാലാവധി വെറും 1 ദിവസം മാത്രം ❕️</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
