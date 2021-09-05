@@ -132,7 +132,7 @@ async def auto_filter(bot, update):
         Send_message = await bot.send_photo(
             chat_id=update.chat.id,
             photo="https://telegra.ph/file/eabeaf432b58f129ea2b4.jpg",
-            caption="<b>Hey {} /nCouldn't Find This Movie.Try Again /nഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>",
+            caption="<b>Couldn't Find This Movie.Try Again..! ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക 🥺</b>",
             reply_to_message_id=update.message_id
         )
         await asyncio.sleep(5)
