@@ -214,11 +214,13 @@ async def auto_filter(bot, update):
            await bot.send_photo(
                 chat_id=update.chat.id,
                 photo="https://telegra.ph/file/4478e088da38cd2f08644.jpg",
-                caption=f"<b>Found {(len_results)} Results For Your Query: {query} \n\nതാങ്കൾക്ക് കിട്ടിയ ഈ ഫിൽറ്റർ മെസ്സേജ് കാലാവധി വെറും 1 ദിവസം മാത്രം ❕️</b>",
+                caption=f"<b>Found {(len_results)} Results For Your Query: {query} \n\nതാങ്കൾക്ക് കിട്ടിയ ഈ ഫിൽറ്റർ മെസ്സേജ് കാലാവധി വെറും 3 മിനിറ്റ് മാത്രം❕️</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
            )
+           await asyncio.sleep(180)
+        await Send_message.delete()
 
         except ButtonDataInvalid:
             print(result[0])
