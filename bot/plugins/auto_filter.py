@@ -213,7 +213,7 @@ async def auto_filter(bot, update):
         try:
            await bot.send_photo(
                 chat_id=update.chat.id,
-                photo="https://telegra.ph/file/4478e088da38cd2f08644.jpg",
+                photo="https://telegra.ph/file/64c456b240adfe31b0cff.jpg",
                 caption=f"<b>Found {(len_results)} Results For Your Query: {query} \n\nതാങ്കൾക്ക് കിട്ടിയ ഈ ഫിൽറ്റർ മെസ്സേജ് കാലാവധി വെറും 3 മിനിറ്റ് മാത്രം❕️</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
