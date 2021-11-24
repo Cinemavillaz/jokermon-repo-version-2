@@ -94,8 +94,14 @@ async def help(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-        await update.reply_sticker(sticker="CAACAgUAAxkBAAI2t2FMHv37THzn2w28YEAXUxMRTFrLAAIFAAOca9w8BKwBxJO2zZ4eBA")
-
+     await bot.send_videk(
+        chat_id=update.chat.id,
+        video="https://telegra.ph/file/0feaa8069418a3b719496.mp4",
+        caption=Translation.HELP_TEXT,
+        reply_markup=reply_markup,
+        parse_mode="html",
+        reply_to_message_id=update.message_id
+    )
 
 @Client.on_message(filters.command(["about"]) & filters.private, group=1)
 async def about(bot, update):
