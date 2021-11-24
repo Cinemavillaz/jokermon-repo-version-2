@@ -1,6 +1,7 @@
 import re
 import logging
 import asyncio
+import random
 
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
@@ -9,6 +10,13 @@ from pyrogram.errors import ButtonDataInvalid, FloodWait
 from bot.database import Database # pylint: disable=import-error
 from bot.bot import Bot # pylint: disable=import-error
 
+pot = [
+    "https://telegra.ph/file/947da416777e8d7e91c4e.jpg",
+    "https://telegra.ph/file/9a0c5f6f38d9dce168b96.jpg",
+    "https://telegra.ph/file/c62445a18b666d562e1d3.jpg",
+    "https://telegra.ph/file/22a78e45dd3e22a5072b3.jpg",
+    "https://telegra.ph/file/0718cb9c8b6b22ea0c5a8.jpg"
+]
 
 FIND = {}
 INVITE_LINK = {}
@@ -213,13 +221,14 @@ async def auto_filter(bot, update):
         try:
            await bot.send_photo(
                 chat_id=update.chat.id,
-                photo="https://telegra.ph/file/64c456b240adfe31b0cff.jpg",
-                caption=f"<b>Found {(len_results)} Results For Your Query: {query} \n\nതാങ്കൾക്ക് കിട്ടിയ ഈ ഫിൽറ്റർ മെസ്സേജ് കാലാവധി വെറും 3 മിനിറ്റ് മാത്രം❕️</b>",
+                photo=f"{random.choice(pot)}",
+                caption=f"<b>Found {(len_results)} Results For Your Query: {query} \n\nതാങ്കൾക്ക് കിട്ടിയ ഈ ഫിൽറ്റർ മെസ്സേജ് കാലാവധി വെറും 10 മിനിറ്റ് മാത്രം❕️</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
                 reply_to_message_id=update.message_id
            )
-           app.delete_messages(chat_id, message_id)
+           await asyncio.sleep(1800)
+           await Send_message.delete()
 
         except ButtonDataInvalid:
             print(result[0])
