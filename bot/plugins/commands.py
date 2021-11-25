@@ -76,10 +76,10 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    await bot.send_sticke(
+    await bot.send_sticker(
         chat_id=update.chat.id,
         reply_markup=reply_markup,
-        sticke="CAACAgIAAxkBAAJiQWGeaO0pQ5EVnMGpeLSMA5gJ1s8jAAI4AwACz7vUDjfOBoopCo9tHgQ"
+        sticker="CAACAgIAAxkBAAJiQWGeaO0pQ5EVnMGpeLSMA5gJ1s8jAAI4AwACz7vUDjfOBoopCo9tHgQ"
    )
 
 
