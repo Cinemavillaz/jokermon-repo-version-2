@@ -79,7 +79,7 @@ async def start(bot, update):
     await bot.send_sticke(
         chat_id=update.chat.id,
         reply_markup=reply_markup,
-        sticke="CAACAgUAAxkBAAIa82GM96PEXj5iCRUAAT02FC8JDbz_nAACKAADJKuYM42eRpadsAOLHgQ"
+        sticke="CAACAgIAAxkBAAJiQWGeaO0pQ5EVnMGpeLSMA5gJ1s8jAAI4AwACz7vUDjfOBoopCo9tHgQ"
    )
 
 
@@ -94,12 +94,10 @@ async def help(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    await bot.send_message(
+    await bot.send_vioe(
         chat_id=update.chat.id,
-        text=Translation.HELP_TEXT,
         reply_markup=reply_markup,
-        parse_mode="html",
-        reply_to_message_id=update.message_id
+        vioe="https://telegra.ph/file/0feaa8069418a3b719496.mp4"
     )
     
 @Client.on_message(filters.command(["about"]) & filters.private, group=1)
