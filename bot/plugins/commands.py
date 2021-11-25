@@ -76,10 +76,10 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-        await bot.reply_sticker(
+        await bot.send_sticker(
         chat_id=update.chat.id,
         reply_markup=reply_markup,
-        sticker="CAACAgIAAxkBAAJiQWGeaO0pQ5EVnMGpeLSMA5gJ1s8jAAI4AwACz7vUDjfOBoopCo9tHgQ"
+        sticker="CAACAgUAAxkBAAIa82GM96PEXj5iCRUAAT02FC8JDbz_nAACKAADJKuYM42eRpadsAOLHgQ"
    )
 
 
@@ -94,12 +94,12 @@ async def help(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-        await bot.reply_message(
-        chat_id=update.chat.id,
-        text=Translation.HELP_TEXT,
-        reply_markup=reply_markup,
-        parse_mode="html",
-        reply_to_message_id=update.message_id
+        await bot.send_message(
+         chat_id=update.chat.id,
+         text=Translation.HELP_TEXT,
+         reply_markup=reply_markup,
+         parse_mode="html",
+         reply_to_message_id=update.message_id
     )
     
 @Client.on_message(filters.command(["about"]) & filters.private, group=1)
@@ -112,11 +112,11 @@ async def about(bot, update):
     reply_markup = InlineKeyboardMarkup(buttons)
     
         await bot.reply_video(
-        chat_id=update.chat.id,
-        video="https://telegra.ph/file/0feaa8069418a3b719496.mp4",
-        caption=Translation.ABOUT_TEXT,
-        reply_markup=reply_markup,
-        disable_web_page_preview=True,
-        parse_mode="html",
-        reply_to_message_id=update.message_id
+         chat_id=update.chat.id,
+         video="https://telegra.ph/file/0feaa8069418a3b719496.mp4",
+         caption=Translation.ABOUT_TEXT,
+         reply_markup=reply_markup,
+         disable_web_page_preview=True,
+         parse_mode="html",
+         reply_to_message_id=update.message_id
     )
