@@ -1,0 +1,16 @@
+version: version
+services: 
+  worker: 
+    build: .
+    environment:
+      API_HASH: $API_HASH
+      APP_ID: $APP_ID
+      BOT_TOKEN: $BOT_TOKEN
+      DB_URI: $DB_URI
+      C_ID_START: $C_ID_START
+      BOT_MASTER: $BOT_MASTER
+      JOIN_MAIN_CHANNEL: $JOIN_MAIN_CHANNEL
+      G_ID_START: $G_ID_START
+      USER_SESSION: $USER_SESSION
+      UPDATE_CHANNEL: $UPDATE_CHANNEL
+      TEXT_MEG_PH: $TEXT_MEG_PH
