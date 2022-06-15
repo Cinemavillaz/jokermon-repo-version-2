@@ -111,7 +111,7 @@ async def about(bot, update):
     
     await bot.reply_video(
         chat_id=update.chat.id,
-        reply_video="https://telegra.ph/file/0feaa8069418a3b719496.mp4",
+        video="https://telegra.ph/file/0feaa8069418a3b719496.mp4",
         caption=Translation.ABOUT_TEXT,
         reply_markup=reply_markup,
         disable_web_page_preview=True,
